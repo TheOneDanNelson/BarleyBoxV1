@@ -15,10 +15,12 @@ class User
   validates_presence_of :email, :name, :date_of_birth
 
   def display_date_of_birth
+    return '' if date_of_birth.nil?
     date_of_birth.strftime('%_m/%-d/%Y')
   end
 
   def edit_date_of_birth
+    return '' if date_of_birth.nil?
     date_of_birth.strftime('%m/%d/%Y')
   end
 
