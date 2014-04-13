@@ -21,7 +21,7 @@
         <div class="col-md-3 beer-grid" ng-repeat="beer in beers | abv:abv_range | ibu:ibu_range | colors:color_range">
           <div ng-click="showDetail(beer)" >
           <img ng-show="{{beer.pic && beer.pic!=''}}" ng-src="/assets/beers/{{beer.pic}}"></img><br/>
-          <p>{{beer.name}} <br/>by {{beer.brewery}} <br/>({{beer.apv}} APV / {{beer.apv}} APV / {{beer.color}})</p>
+          <p>{{beer.name}} <br/>by {{beer.brewery}} <br/>({{beer.apv}}% APV / {{beer.ibu}} IBU / {{beer | color_name}})</p>
           <br/>
           <a class="zocial icon facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://barleybox.herokuapp.com/"></a>
           <a class="zocial icon twitter" href="https://twitter.com/home?status=Check out the great new craft beers that I'm discovering at @BarleyBox! http://barleybox.herokuapp.com/"></a>
@@ -32,15 +32,21 @@
   </div>
 </div>
 <div id="dialog" title="The story">
-  <label>The story behind <span id="beer-name"></span></label><br/>
-  <div id="beer-story"></div>
-  <div id="brewery-story"></div>
+  <img id="beer-image" src="" style="width: 120px;"/><br/><br/>
+  <strong>The story behind <span id="beer-name"></strong>
+  <div id="beer-story">Beef ribs pork chicken sausage. Tongue beef ribs short loin pork chop ham hock venison swine shank tri-tip tenderloin t-bone kevin tail flank. Drumstick sausage pork loin chicken ground round, bresaola tri-tip ribeye brisket cow. T-bone short ribs spare ribs jowl porchetta venison andouille short loin bresaola, boudin hamburger prosciutto meatball ham hock tri-tip. Ground round sausage jerky shank, salami pork ham hock kevin sirloin shankle tenderloin. Hamburger cow brisket, jowl kevin t-bone ground round pork loin frankfurter swine ham hock.</div>
+  <br/>
+  <strong> About the brewery</strong>
+  <div id="brewery-story"></div><br/>
+  <a class="zocial icon facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://barleybox.herokuapp.com/"></a>
+  <a class="zocial icon twitter" href="https://twitter.com/home?status=Check out the great new craft beers that I'm discovering at @BarleyBox! http://barleybox.herokuapp.com/"></a>
+</p>
 </div>
 <script>
   $(function() {
     $( ".slider" ).slider();
   });
   $(function() {
-    $( "#dialog" ).dialog({ autoOpen: false });
+    $( "#dialog" ).dialog({ width: 500, minHeight: 300, autoOpen: false });
   });  
-</script>
+</script>e

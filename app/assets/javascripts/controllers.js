@@ -14,9 +14,12 @@ function BeerSelector($scope) {
   $scope.showDetail = function(beer){
     $("#beer-story").html(beer.story);
     $("#beer-name").html(beer.name);
-    var brewery = _.first($scope.breweries, { 'name': beer.brewery });
-
-    $("#brewery-story").html(brewery.hist);
+    $("#beer-image").attr("src", "/assets/beers/"+beer.pic);
+    var brew_index = _.findIndex($scope.breweries, function(brewery) { return brewery.name == beer.brewery; });
+    if (brew_index){
+      var brewery = $scope.breweries[brew_index];
+      $("#brewery-story").html(brewery.hist);
+    }
 
     $("#dialog").dialog('open');
   }
@@ -43,33 +46,15 @@ angular.module('BarleyBoxFilters', [])
     if (beer.srm <=2)return "Light Yellow";
     if (beer.srm <=3)return "Medium Yellow";
     if (beer.srm <=4)return "Straw-Gold";
-    if (beer.srm <=6)return "Deep-Gold";
-    if (beer.srm <=3)return "Light Amber";
-    if (beer.srm <=3)return "Copper Amber";
-    if (beer.srm <=3)return "Straw-Gold";
-    if (beer.srm <=3)return "Straw-Gold";
-    if (beer.srm <=3)return "Straw-Gold";
-    if (beer.srm <=3)return "Straw-Gold";
-    if (beer.srm <=3)return "Straw-Gold";
-    if (beer.srm <=3)return "Straw-Gold";
-    if (!color_range)return beers;
-    return _.reject(beers, function(beer) { return !(beer.srm >= color_range[0] && beer.srm <= color_range[1]) });
+    if (beer.srm <=6)return "Deep Gold";
+    if (beer.srm <=8)return "Light Amber";
+    if (beer.srm <=10)return "Copper Amber";
+    if (beer.srm <=13)return "Amber Red-Brown";
+    if (beer.srm <=17)return "Light Brown";
+    if (beer.srm <=20)return "Medium Brown";
+    if (beer.srm <=24)return "Dark Brown";
+    if (beer.srm <=29)return "Midnight Black";
+    if (beer.srm <=35)return "Black";
+    return "Dark Black";
   }
 });
-
-2 Light Yellow
-3 Medium Yellow
-4 Straw-Gold
-6 Deep Gold
-8 Light Amber
-10  Copper Amber
-13  Amber Red-Brown
-17  Light Brown
-20  Medium Brown
-24  Dark Brown
-29  Midnight Black
-35  Black
-40  Dark Black
-
-
-
