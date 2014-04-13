@@ -14,5 +14,4 @@ admin = User.new(
   password: 'topsecret',
   password_confirmation: 'topsecret'
 )
-admin.skip_confirmation!
 admin.save!
