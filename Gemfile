@@ -39,3 +39,7 @@ gem "omniauth"
 gem "omniauth-facebook"
 gem "omniauth-twitter"
 gem "hashugar", github: "alex-klepa/hashugar"
+
+group :production, :staging do
+  gem 'rails_12factor'
+end
