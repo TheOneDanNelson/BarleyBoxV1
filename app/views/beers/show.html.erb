@@ -1,29 +1,28 @@
-<div class="container" ng-controller="BeerSelector">
+<div id="page-controller" class="container" ng-controller="BeerSelector">
   <div class="row well">
     <h2>Beer Selection</h2>
     <div class="span2">
       <h3>Preferences</h3>
       <div class="filter">
         <label>Alcohol by Volume ABV</label>
-        <div class="slider"></div>
+        <div ui-slider="{range: true}"  min="4" max="10" ng-model="abv_range"></div>
       </div>
       <div class="filter">
         <label>Bitterness (IBU)</label>
-        <div class="slider"></div>
+        <div ui-slider="{range: true}"  min="15" max="80" step="1" ng-model="ibu_range"></div>
       </div>
       <div class="filter">
         <label>Color</label>
-        <div class="slider"></div>
+        <div ui-slider="{range: true}"  min="1" max="40" step="1" ng-model="color_range"></div>
       </div>
     </div>
     <div class="span9">
       <div class="row">
-        <div class="span3" ng-repeat="beer in beers">
-          {{beer.name}} by {{beer.brewery}}
+        <div class="span3 beer-grid" ng-repeat="beer in beers | abv:abv_range | ibu:ibu_range | colors:color_range">
+          <img ng-show="{{beer.pic && beer.pic!=''}}" ng-src="/assets/beers/{{beer.pic}}"></img><br/>
+          {{beer.name}} <br/>by {{beer.brewery}} ({{beer.apv}})
         </div>
       </div>
-
-      beers go here
     </div>
   </div>
 </div>
