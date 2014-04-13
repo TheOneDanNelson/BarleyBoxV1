@@ -1,5 +1,6 @@
 
 var BarleyBox = angular.module('BarleyBox', ['BarleyBoxFilters', 'ui.slider', 'ui.date']);
+BarleyBox.$inject = ['$scope', '$timeout', 'BarleyBoxFilters', 'ui.slider', 'ui.date'];
 function Signup($scope) { 
 }
 
