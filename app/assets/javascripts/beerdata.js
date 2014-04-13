@@ -33,8 +33,9 @@ var brews = [
   ibu: 18, 
   hops: "", 
   color: "Light",
-  srm: 4
-  source: "http://www.thebrewkettle.com/beers/index.html"},
+  srm: 4,
+  source: "http://www.thebrewkettle.com/beers/index.html",
+  pic: "Dark_Helmet_sm1.png"},
 { id: 4,
   name: "Ruddy Rye Amber Rye Pale Ale", 
   type: "Amber Pale Ale",
