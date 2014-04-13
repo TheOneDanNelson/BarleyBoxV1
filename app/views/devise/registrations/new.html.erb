@@ -1,7 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="span3"></div>
-    <div class="span6 well">
+    <div class="col-md-6 col-md-offset-3 well">
       <h2>Sign up</h2>
       <div class="social">
         <a href="<%=omniauth_authorize_path(:user, :twitter)%>" class="zocial twitter">Sign up with Twitter</a><br/><br/>
@@ -10,14 +9,21 @@
       <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 
         <%= f.input :name, :autofocus => true %>
+        <br/>
         <label>* Date of Birth</label>
         <%= f.date_field :date_of_birth, :required => true %>
-        <%= f.input :email, :required => true %>
+        <br/>
+        <label>* Email</label>
+        <br style="clear: both;"/>
+        <%= f.input_field :email, :required => true %>
+        <br/>
+        <br/>
         <%= f.input :password, :required => true %>
+        <br/>
         <%= f.input :password_confirmation, :required => true %>
+        <br/>
         <%= f.button :submit, 'Sign up', :class => 'btn-primary' %>
       <% end %>
-      <%= render "devise/shared/links" %>
     </div>
   </div>
 </div>

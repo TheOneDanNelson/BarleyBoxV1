@@ -11,15 +11,15 @@
   </head>
   <body class="<%= controller_name %> <%= action_name %>" ng-app="BarleyBox">
     <div class="stretch-background">
-    <header class="navbar navbar-fixed-top">
-      <nav class="navbar-inner">
-        <div class="container">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header" style="width: 100%;">
           <%= render 'layouts/navigation' %>
         </div>
-      </nav>
-    </header>
+      </div>      
+    </nav>
     <%= render 'layouts/messages' %>
-    <div class="content" style="padding-top: 80px;">
+    <div class="content">
       <%= yield %>
       <footer>
       </footer>
