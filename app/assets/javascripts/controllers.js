@@ -1,5 +1,7 @@
 
-var BarleyBox = angular.module('BarleyBox', ['BarleyBoxFilters', 'ui.slider']);
+var BarleyBox = angular.module('BarleyBox', ['BarleyBoxFilters', 'ui.slider', 'ui.date']);
+function Signup($scope) { 
+}
 
 function BeerSelector($scope) {
   $scope.beers = brews;

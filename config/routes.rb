@@ -17,6 +17,10 @@ BootstrapApp::Application.routes.draw do
     get 'index'
   end
 
+  resource :club do
+    get 'signup'
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

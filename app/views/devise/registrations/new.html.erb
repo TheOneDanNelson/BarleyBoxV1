@@ -3,10 +3,15 @@
     <div class="span3"></div>
     <div class="span6 well">
       <h2>Sign up</h2>
+      <div class="social">
+        <a href="<%=omniauth_authorize_path(:user, :twitter)%>" class="zocial twitter">Sign up with Twitter</a><br/><br/>
+        <a href="<%=omniauth_authorize_path(:user, :facebook)%>" class="zocial facebook">Sign up with Facebook</a><br/><br/>
+      </div>
       <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 
         <%= f.input :name, :autofocus => true %>
-        <%= f.date_field :date_of_birth %>
+        <label>* Date of Birth</label>
+        <%= f.date_field :date_of_birth, :required => true %>
         <%= f.input :email, :required => true %>
         <%= f.input :password, :required => true %>
         <%= f.input :password_confirmation, :required => true %>

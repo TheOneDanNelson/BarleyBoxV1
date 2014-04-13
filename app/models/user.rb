@@ -14,8 +14,16 @@ class User
   
   validates_presence_of :email, :name, :date_of_birth
 
+  def display_date_of_birth
+    date_of_birth.strftime('%_m/%-d/%Y')
+  end
+
+  def edit_date_of_birth
+    date_of_birth.strftime('%m/%d/%Y')
+  end
+
   def full_name
-    "#{name} (born #{date_of_birth.to_s})"
+    "#{name} [ born #{display_date_of_birth} ]"
   end
 
 end
