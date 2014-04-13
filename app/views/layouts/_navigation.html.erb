@@ -1,7 +1,8 @@
+<%= link_to image_tag("logo_round_sm.png"), root_path, :class => 'navbar-brand' %>
 <%= link_to "BarleyBox.com - drink!", root_path, :class => 'navbar-brand' %>
 <ul class="nav navbar-nav">
   <% if user_signed_in? %>
-    <li><div style="padding-top: 15px;"><%= current_user.full_name %></div></li>
+    <li><div style="padding-top: 10px;"><%= current_user.full_name %></div></li>
     <li><%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %></li>
   <% else %>
   <% end %>
