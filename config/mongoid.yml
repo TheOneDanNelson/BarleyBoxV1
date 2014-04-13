@@ -79,4 +79,16 @@ test:
         max_retries: 1
         retry_interval: 0
 production:
-  uri: mongodb://theonedannelson:topsecret@oceanic.mongohq.com:10003/app24093436
+  sessions:
+    default:
+      database: app24093436
+      hosts:
+        - oceanic.mongohq.com:10003
+      username: theonedannelson
+      password: topsecret
+      options:
+        consistency: :strong
+        # In the test environment we lower the retries and retry interval to
+        # low amounts for fast failures.
+        max_retries: 1
+        retry_interval: 0
